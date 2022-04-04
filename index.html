@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Talki </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://alap.ai/images/logo/fav.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="font/flaticon.css">
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="preloader" class="preloader">
+        <div class='inner'>
+            <div class='line1'></div>
+            <div class='line2'></div>
+            <div class='line3'></div>
+        </div>
+    </div>
+    <section class="fxt-template-animation fxt-template-layout31">
+        <span class="fxt-shape fxt-animation-active"></span>
+        <div class="fxt-content-wrap">
+            <div class="fxt-heading-content">
+                <div class="fxt-inner-wrap">
+                    <div class="fxt-transformY-50 fxt-transition-delay-3">
+                        <a href="login-31.html" class="fxt-logo"><img src="https://alap.ai/images/logo/logo.png" alt="Logo"></a>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="fxt-form-content">
+                <div class="fxt-page-switcher">
+                    <h2 class="fxt-page-title mr-3">Create Meeting</h2>
+                    <ul class="fxt-switcher-wrap">
+                        <li><a href="login-31.html" class="fxt-switcher-btn active">Trial Remaining : <span id="count_days"></span> Days</a></li>
+                    </ul>
+                </div>
+                <div class="fxt-main-form">
+                    <div class="fxt-inner-wrap">
+                    
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Meeting Title</label>
+                                        <input type="text" id="email" class="form-control" name="email" placeholder="Meeting Title" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <button id="create-meeting" type="submit" class="fxt-btn-fill" onclick="create_meeting()">Create Meeting</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- jquery-->
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/validator.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        var date1, date2;  
+         //define two date object variables with dates inside it  
+         date1 = new Date("04/04/2022");  
+         date2 = new Date("05/19/2022");  
+         var time_difference = date2.getTime() - date1.getTime();  
+         var days_difference = time_difference / (1000 * 60 * 60 * 24);  
+           
+         $("#count_days").html(days_difference); 
+         if(days_difference<=0){
+            $("#create-meeting").remove();
+         } 
+    </script>
+
+    <script type="text/javascript">
+        function create_meeting(){
+            var title = $("#email").val();
+            window.location.href="https://meeting.talki.kr/"+title;
+        }
+    </script>
+
+</body>
+
+</html>
